@@ -8,5 +8,6 @@ namespace Domain.Entities
 {
     public class JobApplication
     {
+        public byte[] CV { get; set; }
     }
 }

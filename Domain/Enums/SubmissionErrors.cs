@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tests
+namespace Domain.Enums
 {
-    public class Class1
+    public enum SubmissionErrors
     {
+        MissingCV,
+        None
     }
 }
