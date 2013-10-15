@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 using Domain.Abstract;
 using Domain.Concrete;
 using Domain.Entities;
@@ -16,7 +17,7 @@ namespace Tests
     {
         #region Fields
 
-        private IApplicationSubmitter _submitter;
+        private ApplicationSubmitter _submitter;
 
         private JobApplication _application;
         #endregion

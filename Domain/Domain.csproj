@@ -40,10 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
-    <Compile Include="Abstract\IApplicationSubmitter.cs" />
-    <Compile Include="Concrete\ApplicationSubmitter.cs" />
+    <Compile Include="ApplicationSubmitter.cs" />
     <Compile Include="Concrete\MemoryRepository.cs" />
-    <Compile Include="Entities\Application.cs" />
+    <Compile Include="Entities\JobApplication.cs" />
     <Compile Include="Enums\SubmissionErrors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
