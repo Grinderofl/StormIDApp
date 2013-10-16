@@ -1,3 +1,8 @@
+using Domain;
+using Domain.Abstract;
+using Domain.Concrete;
+using Domain.Entities;
+
 [assembly: WebActivator.PreApplicationStartMethod(typeof(Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(Web.App_Start.NinjectWebCommon), "Stop")]
 
@@ -53,6 +58,8 @@ namespace Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IRepository<JobApplication>>().To<MemoryRepository<JobApplication>>().InSingletonScope();
+            kernel.Bind<ApplicationSubmitter>().ToSelf().InRequestScope();
         }        
     }
 }

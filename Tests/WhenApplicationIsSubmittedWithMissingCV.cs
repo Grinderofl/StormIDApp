@@ -13,7 +13,7 @@ using NUnit.Framework;
 namespace Tests
 {
     [TestFixture]
-    public class WhenApplicationIsSubmittedWithMissingCV
+    public class WhenApplicationIsSubmittedWithoutCV
     {
         #region Fields
 

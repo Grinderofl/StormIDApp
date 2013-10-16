@@ -10,10 +10,12 @@ namespace Domain.Concrete
     public class MemoryRepository<T> : IRepository<T> where T : class
     {
         private readonly List<T> _collection;
+        private readonly object _locker;
 
         public MemoryRepository()
         {
             _collection = new List<T>();
+            _locker = new object();
         }
 
         public List<T> All()
@@ -33,7 +35,10 @@ namespace Domain.Concrete
 
         public void Delete(T t)
         {
-            _collection.Remove(t);
+            lock (_locker)
+            {
+                _collection.Remove(t);
+            }
         }
 
         public int Count(Func<T, bool> conditional = null)

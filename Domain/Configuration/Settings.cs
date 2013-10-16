@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Enums
+namespace Domain.Configuration
 {
-    public enum SubmissionErrors
+    public static class Settings
     {
-        MissingCV,
-        None,
-        InvalidExtension
+        public static List<FileTypes> AllowedFileTypes { get; set; } 
     }
 }

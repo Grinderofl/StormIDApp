@@ -42,11 +42,18 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="ApplicationSubmitter.cs" />
     <Compile Include="Concrete\MemoryRepository.cs" />
+    <Compile Include="Configuration\FileType.cs" />
+    <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Entities\JobApplication.cs" />
     <Compile Include="Enums\SubmissionErrors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{d3e3a851-2cd1-4ec5-89f3-58f7a6f9894d}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
