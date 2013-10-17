@@ -1,0 +1,25 @@
+﻿@model System.Collections.Generic.List<Domain.Entities.JobApplication>
+
+@{
+    ViewBag.Title = "Applications";
+}
+
+<h2>Applications</h2>
+
+@foreach (var item in Model)
+{
+    <article>
+        <header>
+            <h2>@item.Name</h2>
+        </header>
+        <section>
+            @item.Email
+        </section>
+        <section>
+            <p>@item.Cover</p>
+        </section>
+        <section>
+            <a href="@Url.Action("Download", "CV", new { item.Name, item.FileName })">Download CV</a>
+        </section>
+    </article>
+}

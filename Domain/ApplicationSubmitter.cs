@@ -20,7 +20,7 @@ namespace Domain
 
         public SubmissionErrors Submit(JobApplication cv)
         {
-            if (cv.CV.Length == 0 || cv.FileName.Length == 0)
+            if (cv.CV == null || cv.CV.Length == 0 || cv.FileName.Length == 0)
                 return SubmissionErrors.MissingCV;
 
             foreach (var item in Settings.AllowedFileTypes)

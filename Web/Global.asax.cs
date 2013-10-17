@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Domain.Configuration;
 using Web.App_Start;
 
 namespace Web
@@ -24,6 +25,7 @@ namespace Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ViewEngineConfig.RegisterViewEngines();
+            Settings.LoadSettingsFromConfig();
         }
     }
 }

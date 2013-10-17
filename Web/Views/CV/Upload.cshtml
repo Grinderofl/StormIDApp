@@ -1,1 +1,53 @@
-﻿
+﻿@using System.Reflection
+@using Domain.Configuration
+@using Library.Attributes
+@model Web.Models.JobApplicationModel
+
+@{
+    ViewBag.Title = "Upload";
+}
+
+@using (Html.BeginForm("Upload", "CV", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <article>
+        <header>
+            <h1>Upload your CV</h1>
+        </header>
+        <section>             
+            @Html.LabelFor(x => x.Name)
+            @Html.EditorFor(x => x.Name)
+            @Html.ValidationMessageFor(x => x.Name)
+        </section>
+        <section>
+            @Html.LabelFor(x => x.Email)
+            @Html.EditorFor(x => x.Email)
+            @Html.ValidationMessageFor(x => x.Email)
+        </section>
+        <section>
+            @Html.LabelFor(x => x.Cover)
+            @Html.TextAreaFor(x => x.Cover)
+            @Html.ValidationMessageFor(x => x.Cover)
+        </section>
+        <section>
+            @Html.LabelFor(x => x.CVFile)
+            <input type="file" name="CVFile" id="CVFile" />
+            @Html.ValidationMessageFor(x => x.CVFile)
+        </section>
+        <section>
+            @Html.Label("Extensions:")
+            @{
+                var list = new List<string>();
+                foreach (var item in Settings.AllowedFileTypes)
+                {
+                    var fi = item.GetType().GetField(item.ToString());
+                    var attribute = (FileAttribute)fi.GetCustomAttribute(typeof(FileAttribute), true);
+                    list.Add("*." + attribute.Extension);
+                }
+            }
+            @string.Format("({0})", string.Join(",", list))
+        </section>
+        <footer>
+            <input type="submit"/>
+        </footer>
+    </article>
+}

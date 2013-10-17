@@ -1,0 +1,17 @@
+﻿section label {
+    width: 150px;
+    display: inline-block;
+}
+section {
+    margin-bottom: 5px;
+}
+section textarea, section input {
+    width: 250px;
+}
+section textarea {
+    height: 100px;
+}
+section > span.field-validation-error {
+    display: block;
+    color: red;
+}

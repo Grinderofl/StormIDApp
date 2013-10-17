@@ -138,10 +138,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CVController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\JobApplicationMapper.cs" />
     <Compile Include="Models\JobApplicationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -149,6 +149,7 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\normalize.min.css" />
+    <Content Include="Content\Site2.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -233,9 +234,12 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CV\Upload.cshtml" />
+    <Content Include="Views\Admin\Applications.cshtml" />
+    <Content Include="Views\CV\Success.cshtml" />
+    <Content Include="Views\Admin\Settings.cshtml" />
+    <Content Include="Views\Admin\AllowedFileTypes.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>

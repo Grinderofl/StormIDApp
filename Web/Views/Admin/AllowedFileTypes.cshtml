@@ -1,0 +1,17 @@
+﻿@using Domain.Configuration
+<section id="allowedFileTypes">
+    <ul>
+        @foreach (FileTypes item in Enum.GetValues(typeof (FileTypes)))
+        {
+            <li>
+                @item.ToString() 
+                @{
+                    var enabled = Settings.AllowedFileTypes.Contains(item);
+                }
+
+                @Ajax.ActionLink(enabled ? "Disable" : "Enable", enabled ? "DisableExtension" : "EnableExtension", "Admin", new { type = item }, new AjaxOptions(){ UpdateTargetId = "allowedFileTypes", InsertionMode = InsertionMode.Replace})
+
+            </li>
+        }
+    </ul>
+</section>

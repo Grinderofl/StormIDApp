@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace Tests
         public void Setup()
         {
             _submitter = new ApplicationSubmitter(new MemoryRepository<JobApplication>());
-            Settings.AllowedFileTypes = new List<FileTypes>(){ FileTypes.Docx };
+            Settings.AllowedFileTypes = new ObservableCollection<FileTypes>(){ FileTypes.Docx };
         }
 
         [Test]

@@ -6,13 +6,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>StormID CV Upload - @ViewBag.Title</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="~/Content/normalize.min.css">
         <link rel="stylesheet" href="~/Content/main.css">
-
+        <link rel="stylesheet" href="~/Content/Site2.css"/>
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
@@ -26,7 +26,8 @@
                 <nav>
                     <ul>
                         <li><a href="@Url.Action("Upload", "CV")">Upload CV</a></li>
-                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><a href="@Url.Action("Applications", "Admin")">Applications</a></li>
+                        <li><a href="@Url.Action("Settings", "Admin")">Settings</a></li>
                     </ul>
                 </nav>
             </header>
@@ -40,11 +41,11 @@
 
         <div class="footer-container">
             <footer class="wrapper">
-                <h3>footer</h3>
+
             </footer>
         </div>
 
         @Scripts.Render("~/bundles/jquery")
-        
+        @Scripts.Render("~/bundles/jqueryval")
     </body>
 </html>
