@@ -24,7 +24,7 @@ namespace Domain.Configuration
 
         public static void LoadSettingsFromConfig()
         {
-            var config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Current.Request.ApplicationPath);
+            var config = WebConfigurationManager.OpenWebConfiguration("~");
             var value = config.AppSettings.Settings[KeyName];
             if (value == null) return;
 
@@ -38,7 +38,7 @@ namespace Domain.Configuration
 
         private static void SaveSettingsToConfig()
         {
-            var config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Current.Request.ApplicationPath);
+            var config = WebConfigurationManager.OpenWebConfiguration("~");
             if(!config.AppSettings.Settings.AllKeys.Contains(KeyName))
                 config.AppSettings.Settings.Add(KeyName, "");
             config.AppSettings.Settings[KeyName].Value = string.Join("|", AllowedFileTypes.ToList());
